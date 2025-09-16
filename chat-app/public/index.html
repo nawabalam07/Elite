@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pro Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Join Screen -->
+    <div id="joinScreen" class="join-screen">
+      <div class="card">
+        <h2>💬 Pro Chat</h2>
+        <p>Join a room to start chatting</p>
+        <input id="username" placeholder="Your name" />
+        <input id="room" placeholder="Room (e.g. lobby)" />
+        <button id="joinBtn">Join</button>
+      </div>
+    </div>
+
+    <!-- Chat Screen -->
+    <div id="chatScreen" class="hidden chat-layout">
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h3 id="roomName">Room: lobby</h3>
+        <h4>Online</h4>
+        <ul id="users"></ul>
+        <button id="leaveBtn">Leave Room</button>
+      </aside>
+
+      <!-- Main Chat -->
+      <section class="chat-section">
+        <header class="chat-header">Welcome to Pro Chat</header>
+        <ul id="messages" class="messages"></ul>
+        <form id="messageForm" class="message-form">
+          <input id="messageInput" placeholder="Type a message..." autocomplete="off" />
+          <button>Send</button>
+        </form>
+      </section>
+
+    </div>
+
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
